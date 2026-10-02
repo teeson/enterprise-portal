@@ -6,8 +6,7 @@
   <meta name="theme-color" content="#1d4ed8" />
   <title>智汇门户 · 企业统一工作平台</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-size='18' fill='white' text-anchor='middle' font-family='sans-serif'%3E智%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="core/core.css" />
 </head>
 <body>
   <!-- 移动端遮罩 -->
@@ -24,10 +23,10 @@
       <button class="icon-btn close-drawer" id="closeDrawer" aria-label="关闭">✕</button>
     </div>
     <nav class="nav" id="nav">
-      <!-- 由 JS 渲染 -->
+      <!-- 由核心运行时根据应用目录渲染 -->
     </nav>
     <div class="sidebar-foot">
-      <div class="env-tag">生产环境 · v1.0</div>
+      <div class="env-tag">生产环境 · v2.0 · 模块化架构</div>
     </div>
   </aside>
 
@@ -59,12 +58,12 @@
 
     <!-- 内容区 -->
     <main class="content" id="content">
-      <!-- 由 JS 渲染 -->
+      <!-- 由各应用渲染 -->
     </main>
 
     <!-- 移动端底部导航 -->
     <nav class="bottom-nav" id="bottomNav">
-      <!-- 由 JS 渲染 -->
+      <!-- 由核心运行时根据应用目录渲染 -->
     </nav>
   </div>
 
@@ -77,7 +76,24 @@
     <div class="sheet-body" id="sheetBody"></div>
   </div>
 
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <!-- 核心运行时（注册表 + 路由 + 事件委托 + 工具） -->
+  <script src="core/runtime.js"></script>
+  <!-- 平台数据（应用目录 / 用户 / 设置） -->
+  <script src="core/platform-data.js"></script>
+
+  <!-- 应用：每个应用独立目录，自管源码与数据 -->
+  <script src="apps/workbench/data.js"></script>
+  <script src="apps/workbench/index.js"></script>
+  <script src="apps/news/data.js"></script>
+  <script src="apps/news/index.js"></script>
+  <script src="apps/todo/data.js"></script>
+  <script src="apps/todo/index.js"></script>
+  <script src="apps/message/data.js"></script>
+  <script src="apps/message/index.js"></script>
+  <script src="apps/docs/data.js"></script>
+  <script src="apps/docs/index.js"></script>
+  <script src="apps/apps-center/index.js"></script>
+  <script src="apps/profile/index.js"></script>
+  <script src="apps/search/index.js"></script>
 </body>
 </html>

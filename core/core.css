@@ -1,6 +1,7 @@
 /* ============================================================
-   智汇门户 · 企业统一工作平台
+   智汇门户 · 核心运行时 · 公共设计系统
    设计系统 + 响应式（PC 侧边栏 / 移动端底部导航）
+   说明：公共样式统一沉淀于核心运行时，应用目录只组织源码与数据
    ============================================================ */
 :root {
   --primary: #1d4ed8;
@@ -252,11 +253,7 @@ ul { list-style: none; }
 .chip { padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 12.5px; color: var(--text-2); transition: .15s; }
 .chip.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-/* ---------- 消息 ---------- */
 /* ---------- 消息：微信式会话列表 ---------- */
-.conv-group { margin-bottom: 14px; }
-.conv-group-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--text-2); padding: 4px 2px 8px; }
-.conv-group-badge { background: var(--danger); color: #fff; font-size: 10px; min-width: 16px; height: 16px; border-radius: 8px; display: grid; place-items: center; padding: 0 4px; }
 .conv-row { display: flex; gap: 12px; align-items: center; padding: 11px 10px; border-radius: 12px; transition: .12s; }
 .conv-row:hover { background: var(--surface-2); }
 .conv-row:active { background: var(--primary-50); }
@@ -339,11 +336,23 @@ ul { list-style: none; }
 .back-link:hover { color: var(--primary); }
 
 /* ============================================================
+   工作台卡片编排（由注册卡自动上墙）
+   ============================================================ */
+.home-cards { display: grid; gap: 16px; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+.home-cards > .card { min-width: 0; }
+.app-tile { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 14px 8px; border-radius: 12px; background: var(--surface-2); transition: .15s; text-align: center; }
+.app-tile:hover { background: var(--primary-50); transform: translateY(-2px); }
+.app-tile .at-ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 20px; color: #fff; }
+.app-tile .at-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.app-tile .at-tag { font-size: 11px; color: var(--text-3); }
+
+/* ============================================================
    响应式断点
    ============================================================ */
 @media (max-width: 1080px) {
   .cols-4 { grid-template-columns: repeat(2, 1fr); }
   .home-grid { grid-template-columns: 1fr; }
+  .home-cards { grid-template-columns: 1fr; }
   .app-grid { grid-template-columns: repeat(4, 1fr); }
   .news-layout { grid-template-columns: 1fr; }
   .quick-apps { grid-template-columns: repeat(4, 1fr); }
