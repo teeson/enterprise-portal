@@ -187,13 +187,13 @@ window.Portal = (function () {
 
   /* ---------------- 事件 ---------------- */
   function bindEvents() {
-    $("#menuBtn").addEventListener("click", openDrawer);
-    $("#closeDrawer").addEventListener("click", closeDrawer);
-    $("#scrim").addEventListener("click", () => { closeDrawer(); closeSheet(); });
-    $("#sheetClose").addEventListener("click", closeSheet);
-    $("#todoBtn").addEventListener("click", () => openSheet("todo"));
-    $("#msgBtn").addEventListener("click", () => openSheet("message"));
-    $("#avatarBtn").addEventListener("click", () => { location.hash = appLink("profile"); });
+    const menuBtn = $("#menuBtn"); if (menuBtn) menuBtn.addEventListener("click", openDrawer);
+    const closeDrawerBtn = $("#closeDrawer"); if (closeDrawerBtn) closeDrawerBtn.addEventListener("click", closeDrawer);
+    const scrim = $("#scrim"); if (scrim) scrim.addEventListener("click", () => { closeDrawer(); closeSheet(); });
+    const sheetClose = $("#sheetClose"); if (sheetClose) sheetClose.addEventListener("click", closeSheet);
+    const todoBtn = $("#todoBtn"); if (todoBtn) todoBtn.addEventListener("click", () => openSheet("todo"));
+    const msgBtn = $("#msgBtn"); if (msgBtn) msgBtn.addEventListener("click", () => openSheet("message"));
+    const avatarBtn = $("#avatarBtn"); if (avatarBtn) avatarBtn.addEventListener("click", () => { location.hash = appLink("profile"); });
 
     // 全局搜索
     const search = $("#globalSearch");
