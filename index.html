@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#1d4ed8" />
+  <title>智汇门户 · 企业统一工作平台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-size='18' fill='white' text-anchor='middle' font-family='sans-serif'%3E智%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+</head>
+<body>
+  <!-- 移动端遮罩 -->
+  <div class="scrim" id="scrim"></div>
+
+  <!-- 侧边栏 / 抽屉导航 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">智</div>
+      <div class="brand-text">
+        <strong>智汇门户</strong>
+        <span>Enterprise Portal</span>
+      </div>
+      <button class="icon-btn close-drawer" id="closeDrawer" aria-label="关闭">✕</button>
+    </div>
+    <nav class="nav" id="nav">
+      <!-- 由 JS 渲染 -->
+    </nav>
+    <div class="sidebar-foot">
+      <div class="env-tag">生产环境 · v1.0</div>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <div class="layout">
+    <!-- 顶栏 -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+      <div class="search">
+        <span class="search-ico">🔍</span>
+        <input id="globalSearch" type="text" placeholder="搜索新闻、应用、待办、同事…" />
+        <kbd>/</kbd>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn badge-btn" id="todoBtn" title="待办">
+          <span class="ico">✅</span>
+          <span class="badge" id="todoBadge">0</span>
+        </button>
+        <button class="icon-btn badge-btn" id="msgBtn" title="消息">
+          <span class="ico">🔔</span>
+          <span class="badge" id="msgBadge">0</span>
+        </button>
+        <button class="avatar-btn" id="avatarBtn">
+          <img id="avatarImg" alt="头像" />
+          <span class="status-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="content" id="content">
+      <!-- 由 JS 渲染 -->
+    </main>
+
+    <!-- 移动端底部导航 -->
+    <nav class="bottom-nav" id="bottomNav">
+      <!-- 由 JS 渲染 -->
+    </nav>
+  </div>
+
+  <!-- 抽屉：消息/待办快速面板 -->
+  <div class="sheet" id="sheet">
+    <div class="sheet-head">
+      <span id="sheetTitle">消息</span>
+      <button class="icon-btn" id="sheetClose">✕</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

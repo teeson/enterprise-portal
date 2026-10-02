@@ -1,0 +1,10 @@
+# OS / 编辑器
+.DS_Store
+Thumbs.db
+*.log
+
+# 依赖（本项目零构建，无需提交）
+node_modules/
+
+# 本地环境文件
+.cloudstudio
